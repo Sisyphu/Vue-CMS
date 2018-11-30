@@ -11,9 +11,10 @@
 
         <!-- 九宫格到六宫格的改造过程 -->
          <ul class="mui-table-view mui-grid-view mui-grid-9">
-		            <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><a href="#">
+		            <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+                        <router-link to="/home/newslist">
 		                    <img src="../../image/menu1.png" alt="">
-		                    <div class="mui-media-body">图片分享</div></a></li>
+		                    <div class="mui-media-body">图片分享</div></router-link></li>
 		            <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><a href="#">
 		                 <img src="../../image/menu2.png" alt="">
 		                    <div class="mui-media-body">商品购买</div></a></li>
@@ -46,7 +47,7 @@ import { Toast } from 'mint-ui'
         },
         methods: {
             getLunboTu(){
-                this.$http.get("http://Vue.studyit.io/api/getlunbo").then(result=>{
+                this.$http.get("api/getlunbo").then(result=>{
                     if (result.body.status === 0) {
                         this.lunbotuList = result.body.message;
                     } else {
